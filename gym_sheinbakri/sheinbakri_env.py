@@ -12,12 +12,12 @@ class SheinBakriEnv(gym.Env):
         self.game = GameLogic()
         self.renderer = Renderer(self.game)
         
-        self.observation_space = spaces.Box(low=0, high=1, shape=(7, 7, 2), dtype=np.int8)
+        self.observation_space = spaces.Box(low=0, high=1, shape=(7, 7, 2), dtype=np.uint8)
         self.action_space = spaces.Discrete(49)  # 7x7 grid positions
         
-    def reset(self):
+    def reset(self, seed=100, options=None):
         self.game = GameLogic()
-        return self._get_observation()
+        return self._get_observation(), {}
     
     def step(self, action):
         row, col = divmod(action, 7)
@@ -36,7 +36,7 @@ class SheinBakriEnv(gym.Env):
             done = True
             reward = 1 if winner == 'goat' else -1
         
-        return self._get_observation(), reward, done, {}
+        return self._get_observation(), reward, done, done, {}
     
     def render(self, mode='human'):
         self.renderer.render()
