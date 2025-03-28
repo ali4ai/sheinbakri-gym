@@ -2,8 +2,8 @@
 import gym
 import numpy as np
 from gym import spaces
-from game_logic import GameLogic
-from renderer import Renderer
+from gym_sheinbakri.game_logic import GameLogic
+from gym_sheinbakri.render import Renderer
 
 class SheinBakriEnv(gym.Env):
     def __init__(self):
