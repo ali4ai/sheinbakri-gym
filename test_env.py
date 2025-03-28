@@ -1,1 +1,1 @@
-from gym-sheinbakri.
+from gym_sheinbakri 
