@@ -1,6 +1,19 @@
 # renderer.py
 import pygame
-from config import SCREEN_WIDTH, SCREEN_HEIGHT, WHITE, BLACK, BROWN, GOLD
+# Screen dimensions
+SCREEN_WIDTH = 600
+SCREEN_HEIGHT = 600
+
+# Colors
+WHITE = (255, 255, 255)
+BLACK = (0, 0, 0)
+BROWN = (139, 69, 19)
+GOLD = (255, 215, 0)
+
+# Game Settings
+GRID_SIZE = 7  # 7x7 Board Grid
+TIGER_COUNT = 1
+GOAT_COUNT = 15
 
 class Renderer:
     def __init__(self, game_logic):
